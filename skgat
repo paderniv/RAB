@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Returns the value of given property (via jq)
+# Usage: getprop <service key json> <property>
+function getprop (){
+    echo $1 | jq -r $2
+}
+
+# Get access token, using credential and endpoint
+# in the supplied access key json
+# Usage: get_access_token <service key json>
+function get_access_token (){
+    local json = "$1"
+    local clientid=$(getprop "${json}" .clientid)
+    local clientsecret=$(getprop "${json}" .clientsecret)
+    curl \
+        --silent \
+        --data "grant_type=client_credentials" \
+        --user "${clientid}:${clientsecret}" \
+        "$(getprop "${json}" .url)/oauth/token" \
+    | jq -r '.access_token'
+}
