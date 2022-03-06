@@ -1,4 +1,5 @@
 # RAB
+* bash package: yq, jq (brew install)
 CAP Project by CF CLI
 * accesso API 
 ricercare API esposte dalla BTP (ex Destination Service)
@@ -56,3 +57,8 @@ Getting key sk-vscode-vp00 for service instance vscode-vp00-destination as valen
 > Elimina intestazioni non json nel file con editor
 * node ➜ /workspaces/regScale $ cf service-key vscode-vp00-destination sk-vscode-vp00 > key.json
 
+* Lettura tramite destination API delle destination
+> curl -H "Authorization: Bearer $(skgat < key.json)" --verbose "$(skv uri)/destination-configuration/v1/subaccountDestinations"
+
+* Creao una destination e come body uso sintassi yaml to read convertito in jason e std input [ $(yq r -j -) ]
+> curl --data $(yq r - -o=json) -H "Authorization: Bearer $(skgat < key.json)" --verbose "$(skv uri)/destination-configuration/v1/subaccountDestinations"
