@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+# Service Key - generate access token
+# Pipe a JSON representation of a service key into this to get an access token
+
+# Assumpiton
+# UAA root is in the "url" property
+
+# Test whnether JSON is valid, outputs  areturn code
+# (zero if valid, non-zero otherwise)
+# Usage: testjson <JSON>
+function testjson (){
+  echo $1 | jq empty 2>/dev/null
+  echo $?
+}
+
 # Returns the value of given property (via jq)
 # Usage: getprop <service key json> <property>
 function getprop (){
@@ -10,9 +24,20 @@ function getprop (){
 # in the supplied access key json
 # Usage: get_access_token <service key json>
 function get_access_token (){
-    local json = "$1"
+    local json=$1
+
     local clientid=$(getprop "${json}" .clientid)
+    local url=$(getprop "${json}" .url)
     local clientsecret=$(getprop "${json}" .clientsecret)
+
+if [[ $2 == test ]]; then 
+    echo "clientid:  ${clientid}"
+    echo "clientsecret:  ${clientsecret}"
+    echo "url:  ${url}"
+fi
+
+
+
     curl \
         --silent \
         --data "grant_type=client_credentials" \
@@ -20,3 +45,16 @@ function get_access_token (){
         "$(getprop "${json}" .url)/oauth/token" \
     | jq -r '.access_token'
 }
+
+# Main
+
+sk=`cat /dev/stdin`
+
+
+if [ $(testjson "${sk}") -ne "0" ]; then 
+  >&2 echo "invalid JSON"
+  exit 1
+fi
+
+get_access_token "${sk}" 
+

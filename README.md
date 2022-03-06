@@ -61,4 +61,11 @@ Getting key sk-vscode-vp00 for service instance vscode-vp00-destination as valen
 > curl -H "Authorization: Bearer $(skgat < key.json)" --verbose "$(skv uri)/destination-configuration/v1/subaccountDestinations"
 
 * Creao una destination e come body uso sintassi yaml to read convertito in jason e std input [ $(yq r -j -) ]
-> curl --data $(yq r - -o=json) -H "Authorization: Bearer $(skgat < key.json)" --verbose "$(skv uri)/destination-configuration/v1/subaccountDestinations"
+> curl --data $(yq destination.yaml -o=json) -H "Authorization: Bearer $(skgat < key.json)" --verbose "$(skv uri)/destination-configuration/v1/subaccountDestinations"
+>curl --data '{ "Name": "aavp-dets-cap", "Type": "HTTP","URL": "https://services.odata.org/Experimental/OData/OData.svc" }'  -H "Content-Type:application/json" -H "Authorization: Bearer $(skgat < key.json)" --verbose "$(skv uri)/destination-configuration/v1/subaccountDestinations"
+>curl --data @destination.json  -H "Content-Type:application/json" -H "Authorization: Bearer $(skgat < key.json)" --verbose "$(skv uri)/destination-configuration/v1/subaccountDestinations"
+
+ 
+* Ora constuisco la parte MTA
+> cds add mta
+
