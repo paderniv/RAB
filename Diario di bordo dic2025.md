@@ -7,3 +7,4 @@
   * creazione destination con SAML e certificati
   * legame Buisienss catalog, IAM app, ruolo e visualizzazione app in tile S4
 * connessione da BAS regesta centrale
+  * nonostante si possibile creare destination con autenticazioen Uer e PWD pare non funzionare. Andrebbe aperto incident o appfondito lato logging in ADT o tennant dev
