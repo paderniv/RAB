@@ -22,7 +22,10 @@
   <img width="762" height="471" alt="image" src="https://github.com/user-attachments/assets/b8ae8b97-a947-47e7-8315-dc0ad1f1cebd" />
 
   * Come consumare outboud interface from S4 Cloud
-    * uso di RST come end point REST o IDOC diretto 
+    * uso di RST come end point REST o IDOC diretto
+   
+  * Integrazione E2E XML B2B EDi verso S4P realizzazione howto e app utili
+    * [Specifica (Google Doc)](https://docs.google.com/document/d/1a_QH4WN4kKthoI8vm3wVH5bnCZg2LcQxvBmWyjhbddU/edit?tab=t.0#heading=h.2c60itctddfz)
 
 
   
