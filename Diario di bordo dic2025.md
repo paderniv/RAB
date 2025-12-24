@@ -26,6 +26,8 @@
    
   * Integrazione E2E XML B2B EDi verso S4P realizzazione howto e app utili
     * [Specifica (Google Doc)](https://docs.google.com/document/d/1a_QH4WN4kKthoI8vm3wVH5bnCZg2LcQxvBmWyjhbddU/edit?tab=t.0#heading=h.2c60itctddfz)
+   
+  * installazione su RST di RAP generator tool che permette creazione [RAP multilivello](https://github.com/SAP-samples/cloud-abap-rap/tree/on-prem-2023) 
 
 
   
