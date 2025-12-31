@@ -35,6 +35,7 @@
     * sviluppo back ned RAP via rap generator per app nodi multilivello
     * consumo multi API per servizi OCR
     * uso controllo upload file inline (OKKIO a Mime)
+    * uso KPI tile in contesto obj page
 
 
   
