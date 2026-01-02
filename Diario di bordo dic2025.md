@@ -39,7 +39,8 @@
     * uso fuzzy logic per ricerche su Hana
     * wrapper rest odata per consumare odata V2 pero serve un odata V4
       * [Blog conversione](https://docs.google.com/document/d/1a_QH4WN4kKthoI8vm3wVH5bnCZg2LcQxvBmWyjhbddU/edit?tab=t.0#heading=h.2c60itctddfz](https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-use-the-odata-client-proxy-in-sap-s-4-hana-or-how-to-use-the-odata/ba-p/13425200)
-      * adottata una classe centrale invece una puntuale xche a scopi di sviluppo posso accentrare gli endpoing in unico modello forse... ci si prova
+      * adottata una classe centrale invece una puntuale xche a scopi di sviluppo posso accentrare gli endpoing in unico modello forse... ci si prova e ha funzionato :)
+      * vedi classe specifica per progetto e classe /REG/PROXY_V4_MODELS utile per quick find replace come da blog /reg/proxy_v4_generator
 
 
   
