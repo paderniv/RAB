@@ -41,6 +41,11 @@
       * [Blog conversione](https://docs.google.com/document/d/1a_QH4WN4kKthoI8vm3wVH5bnCZg2LcQxvBmWyjhbddU/edit?tab=t.0#heading=h.2c60itctddfz](https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-use-the-odata-client-proxy-in-sap-s-4-hana-or-how-to-use-the-odata/ba-p/13425200)
       * adottata una classe centrale invece una puntuale xche a scopi di sviluppo posso accentrare gli endpoing in unico modello forse... ci si prova e ha funzionato :)
       * vedi classe specifica per progetto e classe /REG/PROXY_V4_MODELS utile per quick find replace come da blog /reg/proxy_v4_generator
+        * step 1: andare su api hub e ottenere edmx odata (oppure da sap target via admin transaction per v2 0 v4)
+        * step 2: entrare in SAP cloud dev e creare consumtion service odata partendo da DMX
+        * step 3: creare classe in ns /reg/ in pacchetto /REG/ORC_GW_VDM_API, fare copie e rincolla contenuto classe omonina se possibile... da cloud
+        * step 4: modificare classe /reg/proxy_v4_generator e modificare codice nel metodo if_oo_adt_classrun~main. con nome classe creata su on prem
+        * step 5: creare proxy record
 
 
   
