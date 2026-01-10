@@ -33,6 +33,7 @@
     * list report free style ma fiori
     * uso page map estensivo in combinazione al fiori development guide
     * sviluppo back ned RAP via rap generator per app nodi multilivello
+      * generaizone metodi util BL per fattorizzare codice rap basato su EML .. vedi  
     * consumo multi API per servizi OCR
     * uso controllo upload file inline (OKKIO a Mime)
     * uso KPI tile in contesto obj page
