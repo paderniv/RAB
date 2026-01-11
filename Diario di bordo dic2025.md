@@ -47,6 +47,7 @@
         * step 3: creare classe in ns /reg/ in pacchetto /REG/ORC_GW_VDM_API, fare copie e rincolla contenuto classe omonina se possibile... da cloud
         * step 4: modificare classe /reg/proxy_v4_generator e modificare codice nel metodo if_oo_adt_classrun~main. con nome classe creata su on prem
         * step 5: creare proxy record
+      * NOTE fatto create deep con logica ricorsiva basata su dati
 
 
   
